@@ -1,4 +1,4 @@
-var JobList = React.createClass({
+var JobsList = React.createClass({
 	getInitialState: function(){
 		return {jobs: this.props.initialJobs}
 	},
