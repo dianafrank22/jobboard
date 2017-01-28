@@ -1,4 +1,4 @@
 class User < ActiveRecord::Base
 	has_secure_password
-	has_many :jobs, through: :user_jobs
+	has_many :job, through: :user_jobs
 end

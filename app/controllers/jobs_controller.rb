@@ -2,6 +2,7 @@ class JobsController < ApplicationController
 
 	def index
 		# show jobs for that user
+		@job = Job.all
 	end
 
 	def show
@@ -13,7 +14,7 @@ class JobsController < ApplicationController
 		@job = Job.create(
 			:company => params[:company],
 			:url => params[:url],
-			:jobTitle => params[:jobTitle]
+			:jobTitle => params[:jobTitle],
 			:description => params[:description],
 			:status => params[:status]
 			)

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'jobs#index'
   resources :applieds
   resources :users
   resources :coverletters
