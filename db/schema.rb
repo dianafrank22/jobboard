@@ -11,18 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127222231) do
+ActiveRecord::Schema.define(version: 20170130202715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "applied_jobs", force: :cascade do |t|
-    t.integer "job_id"
-    t.integer "applied_id"
-  end
-
-  add_index "applied_jobs", ["applied_id"], name: "index_applied_jobs_on_applied_id", using: :btree
-  add_index "applied_jobs", ["job_id"], name: "index_applied_jobs_on_job_id", using: :btree
 
   create_table "applieds", force: :cascade do |t|
     t.string   "status"
@@ -31,18 +23,20 @@ ActiveRecord::Schema.define(version: 20170127222231) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "coverletter_jobs", force: :cascade do |t|
-    t.integer "job_id"
-    t.integer "coverletter_id"
+  create_table "applieds_jobs", id: false, force: :cascade do |t|
+    t.integer "applied_id", null: false
+    t.integer "job_id",     null: false
   end
 
-  add_index "coverletter_jobs", ["coverletter_id"], name: "index_coverletter_jobs_on_coverletter_id", using: :btree
-  add_index "coverletter_jobs", ["job_id"], name: "index_coverletter_jobs_on_job_id", using: :btree
-
-  create_table "coverletters", force: :cascade do |t|
+  create_table "cover_letters", force: :cascade do |t|
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "cover_letters_jobs", id: false, force: :cascade do |t|
+    t.integer "job_id",          null: false
+    t.integer "cover_letter_id", null: false
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -55,13 +49,10 @@ ActiveRecord::Schema.define(version: 20170127222231) do
     t.string   "jobTitle"
   end
 
-  create_table "user_jobs", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "job_id"
+  create_table "jobs_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "job_id",  null: false
   end
-
-  add_index "user_jobs", ["job_id"], name: "index_user_jobs_on_job_id", using: :btree
-  add_index "user_jobs", ["user_id"], name: "index_user_jobs_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -70,10 +61,4 @@ ActiveRecord::Schema.define(version: 20170127222231) do
     t.datetime "updated_at",      null: false
   end
 
-  add_foreign_key "applied_jobs", "applieds"
-  add_foreign_key "applied_jobs", "jobs"
-  add_foreign_key "coverletter_jobs", "coverletters"
-  add_foreign_key "coverletter_jobs", "jobs"
-  add_foreign_key "user_jobs", "jobs"
-  add_foreign_key "user_jobs", "users"
 end

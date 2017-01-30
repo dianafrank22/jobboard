@@ -1,2 +1,0 @@
-class CoverlettersController < ApplicationController
-end

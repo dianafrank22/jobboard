@@ -179,7 +179,7 @@ We'll take a look at your cover letter, and your writing samples, and if we like
 ]
 )
 
-# User_job.create([
+# JobUser.create([
 # 	{user_id:1, job_id: 1},
 # 	{user_id:1, job_id: 2},
 # 	{user_id:1, job_id: 3},
@@ -188,7 +188,7 @@ We'll take a look at your cover letter, and your writing samples, and if we like
 # 	{user_id:1, job_id: 6}
 # 	])
 
-Coverletter.create([
+CoverLetter.create([
 	{content: 'blah blah blah'},
 	{content: 'blah blah blah'},
 	{content: 'blah blah blah'},
@@ -196,10 +196,11 @@ Coverletter.create([
 	{content: 'blah blah blah'},
 	{content: 'blah blah blah'}])
 
-# Coverletter_job.create([
+# CoverletterJob.create([
 # 	{job_id: 1, coverletter_id: 1},
 # 	{job_id: 2, coverletter_id: 2},
 # 	{job_id: 3, coverletter_id: 3},
 # 	{job_id: 4, coverletter_id: 4},
 # 	{job_id: 5, coverletter_id: 5},
-# 	{job_id: 6, coverletter_id: 6}])	
+# 	{job_id: 6, coverletter_id: 6}
+# ])	

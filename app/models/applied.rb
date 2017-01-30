@@ -1,3 +1,3 @@
 class Applied < ActiveRecord::Base
-	belongs_to :job
+	has_many :jobs, :through => :applied_jobs
 end
