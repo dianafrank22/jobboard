@@ -1,4 +1,4 @@
-class JobsController < ApplicationController
+ class JobsController < ApplicationController
 
 	def index
 		# show jobs for that user
@@ -7,14 +7,13 @@ class JobsController < ApplicationController
 
 	def show
 		@job = Job.where(id: params['id'])
-	#  from attendance management get cover letter id from cover_letter_jobs
-	# use that to get cover letter
-	#   course_ids = CourseUser.select('course_id').where( user_id: @current_user.id )
-
+	    coverLetterId = coverletter_jobs.select('coverletter_id').where(job_id: params['id'])
+        @coverLetter = coverletters.where(:id => coverLetterId)
 		render :show
 	end
 
 	# def create
+	# create job, and create cover letter
 	# 	@job = Job.create(
 	# 		:company => params[:company],
 	# 		:url => params[:url],

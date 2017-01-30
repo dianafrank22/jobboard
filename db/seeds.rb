@@ -6,6 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # company, url, description, status, jobtitle
+
+User.create([
+	{username: "dianafrank" ,password: "seedPassword"}
+	])
+
 Job.create([
 {company: "Kickstarter", url:"https://www.kickstarter.com/jobs/front-end-software-engineer" , description:"We're looking for senior front-end engineers who will contribute directly to our platform for creators and makers. We're seeking someone who loves beautiful design, building new products, and solving problems. We'd love to talk to engineers who have an interest in:
 JavaScript, SCSS and HTML5
@@ -173,3 +178,28 @@ We're especially interested in applications from folks in the early stages of th
 We'll take a look at your cover letter, and your writing samples, and if we like what we see, we'll be in touch to arrange a chat. We're hoping you'll be ready to start with us around March 20th 2017.", status:1 , jobTitle: "Support Programmer"}
 ]
 )
+
+# User_job.create([
+# 	{user_id:1, job_id: 1},
+# 	{user_id:1, job_id: 2},
+# 	{user_id:1, job_id: 3},
+# 	{user_id:1, job_id: 4},
+# 	{user_id:1, job_id: 5},
+# 	{user_id:1, job_id: 6}
+# 	])
+
+Coverletter.create([
+	{content: 'blah blah blah'},
+	{content: 'blah blah blah'},
+	{content: 'blah blah blah'},
+	{content: 'blah blah blah'},
+	{content: 'blah blah blah'},
+	{content: 'blah blah blah'}])
+
+# Coverletter_job.create([
+# 	{job_id: 1, coverletter_id: 1},
+# 	{job_id: 2, coverletter_id: 2},
+# 	{job_id: 3, coverletter_id: 3},
+# 	{job_id: 4, coverletter_id: 4},
+# 	{job_id: 5, coverletter_id: 5},
+# 	{job_id: 6, coverletter_id: 6}])	
