@@ -7,10 +7,10 @@ var JobsList = React.createClass({
 		var jobs = this.state.jobs.map(function(job){
 			return <Job key={job.id} job={job} />;
 			});
-	return(
-		<div className="jobs">
-		{jobs}
-		</div>
-	)
+		return(
+			<div className="jobs">
+				{jobs}
+			</div>
+		)
 	}
 })
