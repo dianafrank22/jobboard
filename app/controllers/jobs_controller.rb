@@ -7,8 +7,7 @@
 
 	def show
 		@job = Job.where(id: params['id'])
-		put CoverLetterJob.all
-	    coverLetterId = CoverLetterJob.select('cover_letter_id').where(job_id: params['id'])
+	    coverLetterId = CoverLettersJob.select('cover_letter_id').where(job_id: params['id'])
         @coverLetter = CoverLetter.where(:id => coverLetterId)
 		render :show
 	end

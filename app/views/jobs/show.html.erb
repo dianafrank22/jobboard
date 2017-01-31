@@ -9,16 +9,19 @@
 <body>
 
 <div class="container">
-
+<% @job.each do |j| %>
 	<div class="item">
-	<%= @job.company %>
-	<%= @job.jobTitle %>
-	<%= @job.description %>
+	<%= j.company %>
+	<%= j.jobTitle %>
+	<%= j.description %>
 	</div>
+<%end%>
 
+<% @coverLetter.each do |c| %>
 	<div class="item">
-	<%= @coverLetter.content %>
+	<%= c.content %>
 	</div>
+	<%end%>
 
 </div>
 </body>
